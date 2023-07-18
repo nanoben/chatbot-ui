@@ -41,6 +41,11 @@ interface Props {
 export const Chat = memo(({ stopConversationRef }: Props) => {
   const { t } = useTranslation('chat');
 
+  // New state variables for authentication
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [password, setPassword] = useState<string>("");
+  const [loginError, setLoginError] = useState<string | null>(null);
+
   const {
     state: {
       selectedConversation,
@@ -67,6 +72,41 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+ // Additional function for handling login
+ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  // Create a new TextEncoder to convert the password to bytes
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+
+  // Hash the password
+  const hashedPassword = await window.crypto.subtle.digest('SHA-256', data);
+
+  // Convert the hash to a hexadecimal string
+  const hashArray = Array.from(new Uint8Array(hashedPassword));
+  const hashedPasswordHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+  try {
+    const response = await fetch("https://tekstai.dk/api/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: hashedPasswordHex }),
+    });
+    if (response.ok) {
+      setIsLoggedIn(true);
+      setLoginError(null);
+    } else {
+      throw new Error("Invalid password.");
+    }
+  } catch (err) {
+    setLoginError(String(err));
+  }
+};
+
+
+
 
   const handleSend = useCallback(
     async (message: Message, deleteCount = 0, plugin: Plugin | null = null) => {
@@ -349,7 +389,17 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
   return (
     <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#343541]">
-      {!(apiKey || serverSideApiKeyIsSet) ? (
+      {!isLoggedIn ? (
+        <form onSubmit={handleLogin}>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Log in</button>
+          {loginError && <div className="error">{loginError}</div>}
+        </form>
+      ) : !(apiKey || serverSideApiKeyIsSet) ? (
         <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
           <div className="text-center text-4xl font-bold text-black dark:text-white">
             Welcome to Chatbot UI
