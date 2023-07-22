@@ -348,6 +348,12 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   };
   const throttledScrollDown = throttle(scrollDown, 250);
 
+  useEffect(() => {
+    // On initial load, check if user is already logged in
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
   
   // useEffect(() => {
   //   console.log('currentMessage', currentMessage);
