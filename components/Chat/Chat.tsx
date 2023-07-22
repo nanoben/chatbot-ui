@@ -406,7 +406,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           {t('Welcome to chat.viden.ai!')}
           </div>
           <div className="text-center text-lg text-black dark:text-white">
-            <div className="mb-8 font-bold">
+            <div className="mb-2 font-bold">
               {t('We are pleased to introduce you to our chatbot, which is designed to be fully GDPR compliant and is hosted on European servers to ensure your data remains secure and private.')}
             </div>
           </div>
@@ -418,9 +418,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             </div>
 
             <div className="mb-2">
-            {t(
-            'Please set your OpenAI API key in the bottom left of the sidebar.',
-          )}
+        
               {t(
                 'Our chatbot is also suitable for use in educational contexts, as a tool for understanding and working with AI.'
                 )}
@@ -460,7 +458,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 <button
                   type="submit"
                   style={{
-                    background: "black",
+                    background: "#3c4047",
                     color: "white",
                     borderRadius: "4px",
                     padding: "10px 15px",
@@ -472,7 +470,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
     }}
   >
-                Log in
+                Log ind
               </button>
               {loginError && <div className="error">{loginError}</div>}
             </form>
