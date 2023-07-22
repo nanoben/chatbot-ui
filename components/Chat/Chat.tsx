@@ -74,7 +74,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
  // Additional function for handling login
- const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   // Create a new TextEncoder to convert the password to bytes
@@ -97,6 +97,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
     if (response.ok) {
       setIsLoggedIn(true);
       setLoginError(null);
+      localStorage.setItem('isLoggedIn', 'true');  // Save login status in local storage
     } else {
       throw new Error("Invalid password.");
     }
@@ -347,6 +348,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   };
   const throttledScrollDown = throttle(scrollDown, 250);
 
+  
   // useEffect(() => {
   //   console.log('currentMessage', currentMessage);
   //   if (currentMessage) {
@@ -390,15 +392,19 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   return (
     <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#343541]">
       {!isLoggedIn ? (
-        <form onSubmit={handleLogin}>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button type="submit">Log in</button>
-          {loginError && <div className="error">{loginError}</div>}
-        </form>
+        <div className="flex items-center justify-center h-full">
+          <form onSubmit={handleLogin} className="flex flex-col items-center">
+            <h1>Your Heading</h1>
+            <p>Your body text</p>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <button type="submit">Log in</button>
+            {loginError && <div className="error">{loginError}</div>}
+          </form>
+        </div>
       ) : !(apiKey || serverSideApiKeyIsSet) ? (
         <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
           <div className="text-center text-4xl font-bold text-black dark:text-white">
