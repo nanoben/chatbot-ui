@@ -403,28 +403,38 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
         <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
           <div className="text-center text-4xl font-bold text-black dark:text-white">
-            Welcome to Chatbot UI
+          {t('Welcome to chat.viden.ai!')}
           </div>
           <div className="text-center text-lg text-black dark:text-white">
-            <div className="mb-8">{`Chatbot UI is an open source clone of OpenAI's ChatGPT UI.`}</div>
-            <div className="mb-2 font-bold">
-              Important: Chatbot UI is 100% unaffiliated with OpenAI.
+            <div className="mb-8 font-bold">
+              {t('We are pleased to introduce you to our chatbot, which is designed to be fully GDPR compliant and is hosted on European servers to ensure your data remains secure and private.')}
             </div>
           </div>
           <div className="text-center text-gray-500 dark:text-gray-400">
             <div className="mb-2">
-              Chatbot UI allows you to plug in your API key to use this UI with
-              their API.
+              
+              {t('Please note that it is important not to enter personally sensitive information in the chat. We are dedicated to protecting your information, but you also have a responsibility to protect your own information.')}
+
             </div>
+
             <div className="mb-2">
-              It is <span className="italic">only</span> used to communicate
-              with their API.
+              
+              {t('Our chatbot is also suitable for use in educational contexts, as a tool for understanding and working with AI.')}
+
             </div>
+
             <div className="mb-2">
-              {t(
-                'Please set your OpenAI API key in the bottom left of the sidebar.',
-              )}
-            </div>
+              
+              {t("It is important to note that our chatbot interface is 100% independent of OpenAI. We have created our own user interface that enables you to work with OpenAI's version 3.5 via Microsoft Azure server. This allows you to take advantage of the latest technology while being confident that your data will remain secure.")}
+
+            </div>            
+            <div className="mb-2">
+              
+            {t("To access our chatbot, you need a token. If you don't already have one, you can easily get one by sending an email to kontakt@viden.ai.")}
+
+          </div>
+
+            
             <div>
               <form onSubmit={handleLogin} className="flex flex-col items-center">
 
