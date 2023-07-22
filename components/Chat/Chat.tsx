@@ -354,6 +354,8 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
       setIsLoggedIn(true);
     }
   }, []);
+
+  
   
   // useEffect(() => {
   //   console.log('currentMessage', currentMessage);
@@ -400,16 +402,37 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
       {!isLoggedIn ? (
         <div className="flex items-center justify-center h-full">
           <form onSubmit={handleLogin} className="flex flex-col items-center">
-            <h1>Your Heading</h1>
-            <p>Your body text</p>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button type="submit">Log in</button>
-            {loginError && <div className="error">{loginError}</div>}
-          </form>
+  <h1>Your Heading</h1>
+  <p>Your body text</p>
+  <input
+    type="text"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    style={{
+      borderRadius: "15px",
+      padding: "10px 15px",
+      fontSize: "1.2em",
+      margin: "10px 0",
+      color: "black"
+    }}
+  />
+  <button
+    type="submit"
+    style={{
+      background: "blue",
+      color: "white",
+      borderRadius: "15px",
+      padding: "10px 15px",
+      fontSize: "1.2em",
+      cursor: "pointer",
+      border: "none",
+      margin: "10px 0"
+    }}
+  >
+    Log in
+  </button>
+  {loginError && <div className="error">{loginError}</div>}
+</form>
         </div>
       ) : !(apiKey || serverSideApiKeyIsSet) ? (
         <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
