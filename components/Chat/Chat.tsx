@@ -353,7 +353,7 @@ const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     if (localStorage.getItem('isLoggedIn') === 'true') {
       setIsLoggedIn(true);
     }
-  }, []);
+  }, [setIsLoggedIn]);
 
   
   
