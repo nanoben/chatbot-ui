@@ -418,8 +418,12 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             </div>
 
             <div className="mb-2">
-              
-              {t('Our chatbot is also suitable for use in educational contexts, as a tool for understanding and working with AI.')}
+            {t(
+            'Please set your OpenAI API key in the bottom left of the sidebar.',
+          )}
+              {t(
+                'Our chatbot is also suitable for use in educational contexts, as a tool for understanding and working with AI.'
+                )}
 
             </div>
 
