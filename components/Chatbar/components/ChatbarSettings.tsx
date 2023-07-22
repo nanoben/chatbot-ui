@@ -35,14 +35,7 @@ export const ChatbarSettings = () => {
     handleExportData,
     handleApiKeyChange,
   } = useContext(ChatbarContext);
-  
-  const handleLogout = () => {
-    // Sæt isLoggedIn-tilstanden til false
-    setIsLoggedIn(false);
-  
-    // Fjern brugerens login-status fra local storage
-    localStorage.removeItem('isLoggedIn');
-  };
+
   return (
     <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
       {conversations.length > 0 ? (
@@ -57,31 +50,15 @@ export const ChatbarSettings = () => {
         onClick={() => handleExportData()}
       />
 
-
       <SidebarButton
         text={t('Settings')}
         icon={<IconSettings size={18} />}
-        onClick={handleLogout}
+        onClick={() => setIsSettingDialog(true)}
       />
 
-     // <SidebarButton
-     //   text={t('Settings')}
-     //   icon={<IconSettings size={18} />}
-     //   onClick={() => setIsSettingDialog(true)}
-     // />
 
-     // {!serverSideApiKeyIsSet ? (
-      //  <Key apiKey={apiKey} onApiKeyChange={handleApiKeyChange} />
-     // ) : null}
 
-     //  {!serverSidePluginKeysSet ? <PluginKeys /> : null}
-    
-     // <SettingDialog
-     //   open={isSettingDialogOpen}
-     //   onClose={() => {
-     //     setIsSettingDialog(false);
-     //   }}
-     // />
+  
     </div>
   );
 };
