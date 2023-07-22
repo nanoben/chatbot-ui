@@ -439,7 +439,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     fontSize: "1.2em",
                     margin: "10px 0",
                     color: "black",
-                    border- color: "hsla(0,0%,100%,.2)"
+                    border-color: "hsla(0,0%,100%,.2)"
     }}
   />
                 <button
@@ -453,7 +453,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     cursor: "pointer",
                     border: "none",
                     margin: "10px 0",
-                    border- color: "hsla(0,0%,100%,.2)"
+                    border-color: "hsla(0,0%,100%,.2)"
 
     }}
   >
