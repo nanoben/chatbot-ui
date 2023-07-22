@@ -360,8 +360,8 @@ const Home = ({
       }}
     >
       <Head>
-        <title>Chatbot UI</title>
-        <meta name="description" content="ChatGPT but better." />
+        <title>Chat.Viden.AI</title>
+        <meta name="description" content="GDPR-kompliant chatbot på europæiske servere." />
         <meta
           name="viewport"
           content="height=device-height ,width=device-width, initial-scale=1, user-scalable=no"
