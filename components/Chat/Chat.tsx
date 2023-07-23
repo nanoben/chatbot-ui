@@ -355,7 +355,21 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
     }
   }, []);
 
-
+  useEffect(() => {
+    // Add event listener for unload event
+    const handleUnload = () => {
+      localStorage.removeItem('isLoggedIn');
+      setIsLoggedIn(false);
+    };
+  
+    window.addEventListener('unload', handleUnload);
+  
+    // Clean up function
+    return () => {
+      window.removeEventListener('unload', handleUnload);
+    };
+  }, []); // Empty array ensures this runs on mount and unmount only
+  
 
   // useEffect(() => {
   //   console.log('currentMessage', currentMessage);
