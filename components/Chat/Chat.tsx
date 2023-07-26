@@ -589,7 +589,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 <IconClearAll size={18} />
               </button>
 
-              <button style={{marginLeft: '20px'}} onClick={handleLogout}>Log ud</button>
+              <button style={{marginLeft: '20px'}} onClick={handleLogout}> Log ud</button>
 
 
             </div>
