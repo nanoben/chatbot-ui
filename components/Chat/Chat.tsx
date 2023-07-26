@@ -343,6 +343,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
+    homeDispatch({ field: 'conversations', value: [] });
     window.location.reload();
   };
 
@@ -585,10 +586,10 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               <button
                 className="ml-2 cursor-pointer hover:opacity-50"
                 onClick={onClearAll}
-              >
+              >  |
                 <IconClearAll size={18} />
               </button>
-
+              |
               <button style={{marginLeft: '20px'}} onClick={handleLogout}> Log ud</button>
 
 
