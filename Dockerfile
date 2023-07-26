@@ -9,6 +9,7 @@ FROM base AS dependencies
 RUN npm ci
 # RUN npm audit fix
 # RUN npm fund
+RUN npm install -g npm@9.8.1
 
 # ---- Build ----
 FROM dependencies AS build
