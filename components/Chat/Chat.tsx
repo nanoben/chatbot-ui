@@ -343,8 +343,9 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
+    window.location.reload();
   };
-  
+
   const scrollDown = () => {
     if (autoScrollEnabled) {
       messagesEndRef.current?.scrollIntoView(true);
@@ -588,7 +589,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 <IconClearAll size={18} />
               </button>
 
-              <button onClick={handleLogout}>Log ud</button>
+              <button style={{marginLeft: '20px'}} onClick={handleLogout}>Log ud</button>
 
 
             </div>
