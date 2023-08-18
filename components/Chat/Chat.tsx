@@ -431,7 +431,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
             </div>
 
-            <div className="mb-2">
+            <div className="mb-2 font-bold">
             BEMÆRK! <br />Chat.viden.ai er et testsystem (beta-udgave), hvor vi undersøger mulighederne for at skabe en GDPR-compliant version af ChatGPT. Tjenesten kan blive lukket ned uden forudgående varsel og vil løbende blive opdateret.
             </div>
             <div className="mb-2">
@@ -439,10 +439,10 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               {t("It is important to note that our chatbot interface is 100% independent of OpenAI. We have created our own user interface that enables you to work with OpenAI's version 3.5 via Microsoft Azure server. This allows you to take advantage of the latest technology while being confident that your data will remain secure.")}
 
             </div>            
-            <div className="mb-2">
+            <div className="mb-2 font-bold">
               
             {t("To access our chatbot, you need a token. If you don't already have one, you can easily get one by sending an email to kontakt@viden.ai.")}
-            <br />Læs om projekt her: <a href='https://viden.ai/pilotprojekt-gdpr-compliance-udgave-af-chatgpt-til-undervisningen/'>Pilotprojekt: GDPR compliance-udgave af ChatGPT til undervisningen</a>.
+            <br />Læs om projekt her: <a href='https://viden.ai/pilotprojekt-gdpr-compliance-udgave-af-chatgpt-til-undervisningen/?chat'><u>Pilotprojekt: GDPR compliance-udgave af ChatGPT til undervisningen</u></a>.
           </div>
 
             
