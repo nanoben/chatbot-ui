@@ -439,7 +439,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             <div className="mb-2">
               
             {t("To access our chatbot, you need a token. If you don't already have one, you can easily get one by sending an email to kontakt@viden.ai.")}
-
+            Læs om projekt her: <a href='https://viden.ai/pilotprojekt-gdpr-compliance-udgave-af-chatgpt-til-undervisningen/'>Pilotprojekt: GDPR compliance-udgave af ChatGPT til undervisningen</a>.
           </div>
 
             
@@ -487,7 +487,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   ) : !(apiKey || serverSideApiKeyIsSet) ? (
     <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
       <div className="text-center text-4xl font-bold text-black dark:text-white">
-        Welcome to Chatbot UI
+        Welcome to Chatbot UI 
       </div>
       <div className="text-center text-lg text-black dark:text-white">
         <div className="mb-8">{`Chatbot UI is an open source clone of OpenAI's ChatGPT UI.`}</div>

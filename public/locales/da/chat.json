@@ -31,7 +31,7 @@
   "Our chatbot is also suitable for use in educational contexts, as a tool for understanding and working with AI." : "Vores chatbot er også velegnet til brug i undervisningssammenhænge, som et værktøj til at forstå og arbejde med AI.",
   "Please note that it is important not to enter personally sensitive information in the chat. We are dedicated to protecting your information, but you also have a responsibility to protect your own information." : "Vær venligst opmærksom på, at det er vigtigt ikke at indtaste personfølsomme oplysninger i chatten. Vi er dedikeret til at beskytte dine oplysninger, men du har også et ansvar for at beskytte din egen information.",
   "It is important to note that our chatbot interface is 100% independent of OpenAI. We have created our own user interface that enables you to work with OpenAI's version 3.5 via Microsoft Azure server. This allows you to take advantage of the latest technology while being confident that your data will remain secure." : "Det er vigtigt at bemærke, at vores chatbot-interface er 100% uafhængig af OpenAI, og at systemet er til test/forskning.",
-  "To access our chatbot, you need a token. If you don't already have one, you can easily get one by sending an email to kontakt@viden.ai." : "For at få adgang til vores chatbot, skal du have en token. Læs om projekt her: <a href='https://viden.ai/pilotprojekt-gdpr-compliance-udgave-af-chatgpt-til-undervisningen/'>Pilotprojekt: GDPR compliance-udgave af ChatGPT til undervisningen</a>."
+  "To access our chatbot, you need a token. If you don't already have one, you can easily get one by sending an email to kontakt@viden.ai." : "For at få adgang til vores chatbot, skal du have en token. "
 }
 
 
