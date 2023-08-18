@@ -431,7 +431,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
             </div>
 
-            <div className="mb-2 font-bold">
+            <div className="mb-2 font-bold" style='color:red'>
             BEMÆRK! <br />Chat.viden.ai er et testsystem (beta-udgave), hvor vi undersøger mulighederne for at skabe en GDPR-compliant version af ChatGPT. Tjenesten kan blive lukket ned uden forudgående varsel og vil løbende blive opdateret.
             </div>
             <div className="mb-2">
